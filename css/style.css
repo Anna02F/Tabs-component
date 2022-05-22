@@ -1,0 +1,158 @@
+:root {
+    --heading-color: #3b4068;
+    --digimon-color: rgb(27 100 156);
+    --pokemon-color: #cea536;
+    --tamagotchi-color: #d4001c;
+    --indigo-050: #e0e8f9;
+    --indigo-100: #bed0f7;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Typography */
+
+html {
+    font-size: 62.5%; /*62.5% relevant to the font size of the root element (10px)*/
+}
+
+body {
+    font-family: "roboto", sans-serif;
+    font-size: 2.5em;
+    line-height: 1.4;
+    text-align: center;
+    background: linear-gradient(#d1d1ff, #ebebee);
+    height: 100vh;
+}
+
+h1 {
+    color: var(--heading-color);
+    font-family: "Shizuru", cursive;
+    font-size: 6em;
+    margin: 0.1em auto 0.5em;
+    text-align: center;
+    text-shadow: 2px 2px 2px #000;
+}
+
+h2 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    text-align: left;
+    letter-spacing: 2px;
+}
+
+/* Themes */
+
+[data-theme="digimon"] {
+    color: var(--digimon-color);
+    border: 0.5em solid var(--digimon-color);
+}
+
+[data-theme="pokemon"] {
+    color: var(--pokemon-color);
+    border: 0.5em solid var(--pokemon-color);
+}
+
+[data-theme="tamagotchi"] {
+    color: var(--tamagotchi-color);
+    border: 0.5em solid var(--tamagotchi-color);
+}
+
+/* Tabs */
+
+.tabs-container {
+    max-width: 50vw;
+    margin: 0 auto;
+    box-shadow: 0 0px 5px 2px #989ff1;
+}
+
+.tabs {
+    display: flex;
+}
+
+.tab {
+    position: relative;
+    padding: 1.5em 1em;
+    text-align: center;
+    flex: 1;
+    font-weight: bold;
+    margin-bottom: -0.5em;
+    filter: grayscale(75%) brightness(0.9);
+    background-color: var(--indigo-100);
+}
+
+.tab.is-selected {
+    filter: none;
+    background-color: #fff;
+}
+
+.tab.is-selected:after {
+    content: "";
+    position: absolute;
+    bottom: -0.47em;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+    border-bottom: 0.5em solid #fff;
+}
+
+/* Tab content */
+.tab-contents {
+    position: relative;
+}
+
+.tab-content {
+    display: none;
+    justify-content: space-between;
+    padding: 2em 1em;
+    background-color: #fff;
+    color: rgb(39, 39, 39);
+    text-align: left;
+}
+
+.tab-content.is-selected {
+    display: flex;
+}
+.tab-content_left {
+    padding-left: 1em;
+    max-width: 30em;
+}
+
+.tab-content_left a {
+    display: inline-block;
+    margin-top: 1em;
+}
+
+.tab-content_left a::after {
+    content: "-->";
+    display: inline-block;
+    margin-left: 5px;
+    transition: margin 0.2s ease-in;
+}
+.tab-content_left a:hover::after {
+    margin-left: 10px;
+}
+
+.tab-content_right {
+    max-width: 35%;
+    height: 80%;
+}
